@@ -1,0 +1,40 @@
+use('tester_store');
+
+db.products.drop();
+
+db.products.insertMany([
+  {
+    _id: 1,
+    name: "Perros",
+    price: 34
+  },
+  {
+    _id: 5,
+    name: "Vaca",
+    price: 43
+  },
+  {
+    _id: 21,
+    name: "Gato",
+    price: 125
+  },
+  {
+    _id: 45,
+    name: "Gato",
+    price: 125
+  },
+  {
+    _id: 5,
+    name: "Gato",
+    price: 125
+  },
+  {
+    _id: 225,
+    name: "Gato",
+    price: 125
+  },
+], {
+  ordered: false
+})
+
+db.products.find();

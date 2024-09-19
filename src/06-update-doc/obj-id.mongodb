@@ -1,0 +1,19 @@
+use("tester_store")
+
+// IMPORTANTE :
+// se puede agregar en el inc el tax aunque
+// el product no tenga ese atributo ==> OSEA que
+// el inc va a crear y ademas aumentar el
+// atributo que "nace" en 0 (cero).
+
+db.products.updateOne(
+  // query
+  {_id: ObjectId('66eca35a8cf638b30c7a15b7')},
+  // change => operators
+  {
+    $inc: {
+      price: 150,
+      tax: 1
+    }
+  })
+

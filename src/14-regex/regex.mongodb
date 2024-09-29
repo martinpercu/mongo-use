@@ -1,0 +1,18 @@
+use("tester_store")
+
+// db.inventory.find({ "item.description": "Single line description."})
+
+// db.inventory.find({ "item.description": {$regex: /line/ } })
+
+// // case not sensitive
+// db.inventory.find({ "item.description": {$regex: /LINE/i } })
+
+
+// // End with line
+// db.inventory.find({ "item.description": {$regex: /line$/ } })
+
+// // start with Single + case not sensitive
+// db.inventory.find({ "item.description": {$regex: /^single/i } })
+
+// Get en -salto de linea-  ===> "\n"
+db.inventory.find({ "item.description": {$regex: /^s/im } })

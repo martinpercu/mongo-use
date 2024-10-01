@@ -1,0 +1,18 @@
+use("sample_airbnb")
+
+// db.listingsAndReviews.findOne()
+
+// db.listingsAndReviews.find({
+//   amenities: "Wifi"
+// }, {
+//   price:1,
+//   amenities:1
+// })
+
+// Aggregate ==> como pipelines
+// Osea [], [], []
+db.listingsAndReviews.aggregate([
+  { $match: { amenities: "Wifi" } }, // es un find()
+  { $project: { address:1 } }, // es la projection
+  { $group: { _id: "$address.country", count: { $sum: 1 } } }
+])

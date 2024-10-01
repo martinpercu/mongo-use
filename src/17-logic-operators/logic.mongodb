@@ -1,4 +1,4 @@
-use("sample_training")
+use("sample_training");
 
 // // $and de manera implícita
 // db.inspections.find({
@@ -15,7 +15,6 @@ use("sample_training")
 //   ]
 // })
 
-
 // // $or  ==> [{}, {}, {}]
 // db.inspections.find({
 //   $or: [
@@ -24,7 +23,6 @@ use("sample_training")
 //   ]
 // })
 
-
 // // $nor  ==> [{}, {}, {}]
 // db.inspections.find({
 //   $nor: [
@@ -32,7 +30,6 @@ use("sample_training")
 //     { result: "Unable to Locate" }
 //   ]
 // })
-
 
 // // $nor  ==> [{}, {}, {}]
 // db.inspections.find({
@@ -45,15 +42,13 @@ use("sample_training")
 //   _id: 0
 // })
 
-
-
-// $nor  ==> [{}, {}, {}]
-db.inspections.find({
-  $nor: [
-    { result: "Unable to Locate" },
-    // { result: "No Violation Issued" }
-  ]
-}, {
-  result: 1,
-  _id: 0
-})
+// $not  ==> {}
+db.inspections.find(
+  {
+    result: { $not: { $regex: /Unable to Locate/ } },
+  },
+  {
+    result: 1,
+    _id: 0,
+  }
+);

@@ -1,0 +1,6 @@
+use("tester_store")
+
+db.categories
+  .find()
+  .skip(6)
+  .limit(3)

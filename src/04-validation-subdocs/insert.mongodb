@@ -1,0 +1,10 @@
+use("tester_store")
+
+db.products.insertOne({
+  name: 'Remera',
+  sizes: ['XL', 'L', 'M', 'S'],
+  category: {
+    name: 'name of Category',
+    image: '54854554'
+  }
+})

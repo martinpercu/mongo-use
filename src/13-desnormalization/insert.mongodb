@@ -1,0 +1,21 @@
+use("tester_store")
+
+db.orders.insertOne({
+  userId: ObjectId('67000c439ad21e48c65c644d'),
+  date: '2024-02-24',
+  items: [
+    {
+      name: 'Producto 2',
+      price: 2,
+      qty: 35,
+      product_id: ObjectId('670035f8fa52db8b5dbf99f5')
+    },
+    {
+      name: 'Producto 4',
+      price: 80,
+      qty: 5,
+      product_id: ObjectId('670035f8fa52db8b5dbf99f7')
+    }
+  ]
+})
+

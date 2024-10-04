@@ -1,0 +1,11 @@
+use("tester_store")
+
+db.orders.insertOne({
+  userId: ObjectId('67000c439ad21e48c65c644d'),
+  date: '2024-02-24',
+  items: []
+})
+
+
+// id order  ==> 67004b66e3bd5c64dd3e095c
+

@@ -1,0 +1,8 @@
+use("tester_store")
+
+db.products.find()
+
+db.users.find()
+
+db.orders.findOne({ _id: ObjectId('67004b66e3bd5c64dd3e095c')})
+

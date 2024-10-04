@@ -1,0 +1,39 @@
+use("tester_store");
+
+// db.orders.updateOne(
+//   { _id: ObjectId("67004b66e3bd5c64dd3e095c") },
+//   {
+//     $push: {
+//       items: {
+//         name: 'Producto 4',
+//         price: 80,
+//         qty: 5,
+//         product_id: ObjectId('670035f8fa52db8b5dbf99f7')
+//       }
+//     },
+//     $inc: {
+//       total: 80 * 5
+//     }
+//   }
+// );
+
+
+
+// Other product ==>  // Product 1 ==> 670035f8fa52db8b5dbf99f4
+
+db.orders.updateOne(
+  { _id: ObjectId("67004b66e3bd5c64dd3e095c") },
+  {
+    $push: {
+      items: {
+        name: 'Producto 1',
+        price: 20,
+        qty: 3,
+        product_id: ObjectId('670035f8fa52db8b5dbf99f4')
+      }
+    },
+    $inc: {
+      total: 20 * 3
+    }
+  }
+);

@@ -1,0 +1,19 @@
+use("tester_store")
+
+db.users.insertOne({
+  email: 'admin@perrddd.com',
+  password: '19sfsdff80',
+  role: 'admin',
+  last_name: 'Mendez 2',
+  social_accounts: ['X', 'Instagram'], //with additionalProperties: false NOT WILL WORK
+  address: {
+    street: 'Trebunica 60h avenue',
+    city: 'Mardel',
+    zip: "7600"
+  },
+  shipping_address: {
+    street: 'Santiago del Estero 3730',
+    city: 'Mardel',
+    zip: '7600'
+  }
+})

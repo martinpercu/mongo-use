@@ -1,0 +1,27 @@
+use("tester_store")
+
+// db.users.find()
+
+// db.orders.find()
+
+// find orders that at least one item has qty 104800
+db.orders.find({'items.qty': 104800 })
+
+
+
+
+
+
+
+// // Return orders with 2 items
+// db.orders.find({ items: { $size : 2 } })
+
+// // Return orders with 6 items exactly
+// db.orders.find({ items: { $size : 6 } })
+
+
+// // will return orders with 4 or more
+// db.orders.find({ 'items.3': { $exists: true} })
+
+// // will return orders with 6 or more
+// db.orders.find({ 'items.5': { $exists: true} })

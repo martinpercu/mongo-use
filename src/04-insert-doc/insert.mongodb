@@ -1,0 +1,10 @@
+use('tester_store');
+
+db.products.insertOne({
+  name: "Producto NU 1",
+  price: 450
+});
+db.products.insertOne({
+  name: "Producto 2 ",
+  price: 550
+});

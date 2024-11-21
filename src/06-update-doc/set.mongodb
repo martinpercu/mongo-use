@@ -1,0 +1,14 @@
+use("tester_store")
+
+db.products.updateOne(
+  // query
+  {_id: 2},
+  // change => operators
+  {
+    $set: {
+      name: "Nombre cambiado y agregado atributo tags y tax",
+      price: 4150,
+      tags: ["alto", "bajo", "lento"],
+      tax: 5
+    }
+  })

@@ -1,0 +1,15 @@
+use("tester_store")
+
+// UPSERT ==> always with updateOne
+// mo matter if is insert or update
+
+db.iot.updateOne ({
+  sensor: "A002",
+  date: "2022-01-03",
+}, {
+  $push: {
+    readings: 14
+  }
+}, {
+  upsert: true
+})

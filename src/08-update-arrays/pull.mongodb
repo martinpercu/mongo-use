@@ -1,0 +1,18 @@
+use('tester_store');
+
+// //remove one element from array
+// db.inventory.updateMany({}, {
+//   $pull: {
+//     tags: "book"
+//   }
+// })
+
+
+//remove several elements from array
+db.inventory.updateMany({}, {
+  $pull: {
+    tags: {
+      $in: ["appliance", "school"]
+    }
+  }
+})

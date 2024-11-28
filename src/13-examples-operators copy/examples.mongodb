@@ -9,5 +9,5 @@ db.iot.updateMany(
       readings: { $gte:3 }
     }
   }
-
 )
+

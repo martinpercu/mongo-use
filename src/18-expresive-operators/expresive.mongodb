@@ -1,0 +1,15 @@
+use("tester_store")
+
+// db.monthlyBudget.find({ spent: { $gte: 100 }})
+// db.monthlyBudget.find({
+//   $expr: {
+//     $gte: ["$spent", 100]
+//   }
+// })
+
+// Osea esto devuelve lo que "spent" es mayor que "budget"
+db.monthlyBudget.find({
+  $expr: {
+    $gte: ["$spent", "$budget"]
+  }
+})

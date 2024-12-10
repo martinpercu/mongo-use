@@ -1,0 +1,35 @@
+use("sample_training")
+
+
+// db.trips.findOne()
+
+// db.trips.find({"start station location.type": "Point"}).count()
+
+// db.companies.findOne()
+
+// db.companies.find({
+//   "relationships.0.person.last_name": "Zuckerberg"
+// },
+// {
+//   name:1,
+//   relationships:1
+// })
+
+// db.companies.find({
+//   "relationships.0.person.first_name": "Mark"
+// },{
+//   name:1,
+//   relationships:1
+// }).count() // 108
+
+
+db.companies.find({
+  relationships: {
+    $elemMatch: {
+      "person.first_name": "Mark"
+    }
+  }
+}, {
+  name:1,
+  relationships:1
+}).count() // 523

@@ -1,0 +1,36 @@
+use("sample_training")
+
+// db.trips.find()
+
+// // Esto devuelve los viajes que inicia y regresan al mismo point de las bicis
+// db.trips.find({
+//   $expr: {
+//     $eq: ["$start station id", "$end station id"]
+//   }
+// }).count()
+
+// Esto además agrega los viajes que duraron mas 1220
+db.trips.find({
+  $expr: {
+    $and: [
+      { $eq: ["$start station id", "$end station id"] },
+      { $gte: ["$tripduration", 1220] }
+    ]
+  }
+}).count()
+
+
+// // Esto es lo mismo que arriba ==> ver codigo pero es lo mismo
+// db.trips.find({
+//   $and: [
+//      {
+//       $and: [
+//         { $eq: ["$start station id", "$end station id"] },
+//         { $gte: ["$tripduration", 1220] }
+//       ]
+//      },
+//      {
+//       tripduration: { $gte: 1220 }
+//      },
+//   ]
+// }).count()

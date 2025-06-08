@@ -1,0 +1,16 @@
+use("tester_store")
+
+db.stores.insertOne({
+  storeId: 'ST0024',
+  name: 'My super store',
+  address: '6420 35th Ave'
+})
+
+db.stores_details.insertOne({
+  storeId: 'ST0024',
+  description: 'tesxt sdf qsqjkldsskkjsd sdfkljsdf ',
+  manager: {
+    email: 'martin@martin.com',
+    cellphone: '645098822'
+  }
+})

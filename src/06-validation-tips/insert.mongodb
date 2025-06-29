@@ -1,0 +1,9 @@
+use("tester_store")
+
+db.users.insertOne({
+  last_name: 'Mevddsd endedor',
+  email: 'elperer@perrddd.com',
+  password: '19sfssdsddsdff80',
+  role: 'admin',
+  social_accounts: ['X', 'Instagram'] //with additionalProperties: false NOT WILL WORK
+})

@@ -1,0 +1,7 @@
+use("tester_store")
+
+db.users.insertOne({
+  last_name: 'Mendez',
+  email: 'elperro@perro.com',
+  password: 'qsdlfhqsdjklfh'
+})

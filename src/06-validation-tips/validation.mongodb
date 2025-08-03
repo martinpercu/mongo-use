@@ -1,0 +1,45 @@
+use("tester_store")
+
+db.getCollectionInfos()
+
+db.runCommand({
+  collMod: 'users',
+  validator: {
+    $jsonSchema: {
+      bsonType: 'object',
+      required: ['email', 'password', 'role', '_id'],
+      additionalProperties: false, // if false not allow to add anything different
+      // to put additionProperties in false is IMPERATIVE add in
+      //properties the "_id" and also add in required
+      properties: {
+        _id: {
+          bsonType: 'objectId'
+        },
+        name: {
+          bsonType: 'string'
+        },
+        last_name: {
+          bsonType: 'string'
+        },
+        email: {
+          bsonType: 'string'
+        },
+        password: {
+          bsonType: 'string',
+          pattern: "^[A-Za-z0-9]{8,}$",
+        },
+        age: {
+          bsonType: 'number',
+          minimum: 18,
+          maximum: 99
+        },
+        isSingle: {
+          bsonType: 'bool'
+        },
+        role: {
+          enum: ['customer', 'seller', 'admin']
+        }
+      }
+    }
+  }
+})

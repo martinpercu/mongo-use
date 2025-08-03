@@ -1,0 +1,21 @@
+use("tester_store");
+
+// Creating 2 stores with an arrays of products IDs
+db.stores.insertMany([
+  {
+    name: "Store 1",
+    products_ids:[
+      ObjectId('66fe20b79b7b3fc49e1b2c3a'),
+      ObjectId('66fe20be88ab59620c812118'),
+    ]
+  },
+  {
+    name: "Store 2",
+    products_ids:[
+      ObjectId('66fe20b79b7b3fc49e1b2c3a'),
+      ObjectId('66fe20be88ab59620c812118'),
+      ObjectId('66fe20cbcf0bffb9e815bced'),
+      ObjectId('670035f8fa52db8b5dbf99f5'),
+    ]
+  },
+]);

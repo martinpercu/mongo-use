@@ -1,0 +1,5 @@
+use("tester_store")
+
+db.users.find({
+  "address.city": "Woodside"
+})

@@ -1,0 +1,15 @@
+use("tester_store")
+
+// db.stores.find({ storeId: "ST0024" })
+// db.stores_details.find({ storeId: "ST0024" })
+
+db.stores.aggregate([
+  {
+    $lookup: {
+      from: 'stores_details',
+      localField: 'storeId',
+      foreignField: 'storeId',
+      as: 'detail'
+    }
+  }
+])

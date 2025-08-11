@@ -3,8 +3,6 @@ use("tester_store")
 db.users.insertOne({
   last_name: 'Mendez vdendedor',
   email: 'elperrobdender@perro.com',
-  password: '198019sdfsdf80',
-  role: 'admin',
-  age: 48,
-  isSingle: true
+  password: '19ssdfsdf80',
+  role: 'admin'
 })

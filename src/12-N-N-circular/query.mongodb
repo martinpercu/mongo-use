@@ -1,0 +1,22 @@
+use("tester_store")
+
+db.products.find()
+
+// db.stores.find()
+
+// Product ID
+// 66fe20b79b7b3fc49e1b2c3a
+
+// Store ID
+// 6700384b872e84e35f591a72
+
+db.products.aggregate([
+  {
+    $lookup: {
+      from: 'stores',
+      localField: 'stores_ids',
+      foreignField: '_id',
+      as: 'stores' // this is the new
+    }
+  }
+])

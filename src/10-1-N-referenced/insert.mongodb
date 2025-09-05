@@ -1,19 +1,25 @@
 use("tester_store")
 
-db.orders.insertOne({
-  userId: ObjectId('67000c9229198259929d96c1'),
-  date: '2024-02-20',
-  items: [
-    {
-      name: 'Leon',
-      price: 80000,
-      qty: 1
-    },
-    {
-      name: 'elefante',
-      price: 6000,
-      qty: 4
-    },
-  ]
-})
+db.products.insertMany([
+  {
+  name: 'Producto 1',
+  sizes: ['XL', 'L', 'M'],
+  price: 20
+  },
+  {
+  name: 'Producto 2',
+  sizes: ['XL', 'L', 'M', 'S'],
+  price: 35
+  },
+  {
+  name: 'Producto 3',
+  sizes: ['L', 'M', 'S', 'XS'],
+  price: 50
+  },
+  {
+  name: 'Producto 4',
+  sizes: ['S', 'XS'],
+  price: 80
+  }
+])
 

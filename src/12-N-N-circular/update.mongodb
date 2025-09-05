@@ -1,0 +1,20 @@
+use("tester_store")
+
+
+// Product ID
+// 66fe20b79b7b3fc49e1b2c3a
+
+// Store ID
+// 6700384b872e84e35f591a72
+
+
+db.products.updateOne(
+  {_id: ObjectId('66fe20b79b7b3fc49e1b2c3a')},
+  {
+    $set: {
+      stores_ids: [
+        ObjectId('6700384b872e84e35f591a72')
+      ]
+    }
+  }
+)

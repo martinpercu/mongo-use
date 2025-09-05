@@ -1,0 +1,66 @@
+use("tester_store")
+
+db.users.find()
+
+// db.orders.find()
+
+// // the orders from user A
+// db.orders.find({ userId: ObjectId('67000c9229198259929d96c1') })
+
+// the orders from user B
+db.orders.find({ userId: ObjectId('67000c439ad21e48c65c644d') })
+
+
+// // Retrieve the user info
+// db.users.findOne({ _id: ObjectId('67000c439ad21e48c65c644d') })
+
+
+// // Get both ALL Orders mixin the order + the user
+// db.orders.aggregate([
+//   {
+//     $lookup: {
+//       from: 'users',
+//       localField: 'userId',
+//       foreignField: '_id',
+//       as: 'user'
+//     }
+//   }
+// ])
+
+// Get one order mixin the order + the user
+db.orders.aggregate([
+  {
+    $match: {
+      _id: ObjectId('67002766009cf587d0412399')
+    }
+  },
+  {
+    $lookup: {
+      from: 'users',
+      localField: 'userId',
+      foreignField: '_id',
+      as: 'user'
+    }
+  }
+])
+
+
+// // Get all orders from an specific user MIXIN users + orders
+// // In real life this is not useful because first we get the user
+// // then if need it the order list.
+// // This is an example to connect 2 collelctions
+// db.users.aggregate([
+//   {
+//     $match: {
+//       _id: ObjectId('67000c439ad21e48c65c644d')
+//     }
+//   },
+//   {
+//     $lookup: {
+//       from: 'orders',
+//       localField: '_id',
+//       foreignField: 'userId',
+//       as: 'orders'
+//     }
+//   }
+// ])

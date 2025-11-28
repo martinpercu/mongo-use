@@ -1,0 +1,22 @@
+use("pets")
+
+// // No hay necesidad se aplica unique identificator in mongoose
+// db.createCollection('qrs', {
+//   validator: {
+//     $jsonSchema: {
+//       bsonType: 'object',
+//       required: ['identificator', 'hasSeller'],
+//       properties: {
+//         identificator: {
+//           bsonType: 'string',
+//         },
+//         hasSeller: {
+//           bsonType: 'bool'
+//         },
+//         hasOwner: {
+//           bsonType: 'bool'
+//         }
+//       }
+//     }
+//   }
+// })

@@ -1,6 +1,6 @@
 # MongoDB - Step by Step Tutorial
 
-Practical MongoDB tutorial with examples organized by topic, based on [Platzi's MongoDB course](https://github.com/platzi/curso-mongodb-intro).
+Practical MongoDB tutorial with examples organized by topic.
 
 ## Requirements
 

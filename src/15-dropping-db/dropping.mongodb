@@ -1,0 +1,6 @@
+use("sample_weatherdata")
+
+// db.data.drop()
+
+// se borramos la collection "data"
+// se borra DB sample_weatherdata

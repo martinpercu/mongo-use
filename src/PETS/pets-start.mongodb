@@ -1,0 +1,18 @@
+use("pets")
+
+// db.qrs.drop()
+
+// db.sellers.drop()
+
+// db.sellers.find({"authid": "fethYlzrlOdAne3trjUq7SPRkYp1"})
+// db.sellers.find()
+
+
+// db.owners.drop()
+// db.owners.find()
+
+
+db.qrs.drop()
+
+// se borramos la collection "data"
+// se borra DB sample_weatherdata
